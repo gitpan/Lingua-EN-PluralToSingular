@@ -1,0 +1,42 @@
+{
+   "abstract" : "change an English plural to a singular",
+   "author" : [
+      "Ben Bullock <bkb@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.120630",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Lingua-EN-PluralToSingular",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {}
+      }
+   },
+   "release_status" : "stable",
+   "version" : "0.01",
+   "x_bugtracker" : "https://github.com/benkasminbullock/Lingua-EN-PluralToSingular/issues",
+   "x_homepage" : "http://prepan.org/module/3Yz7PYrBN8",
+   "x_repository" : "https://github.com/benkasminbullock/Lingua-EN-PluralToSingular"
+}
