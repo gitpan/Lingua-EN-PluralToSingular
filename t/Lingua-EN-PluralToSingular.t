@@ -24,6 +24,9 @@ geese goose
 dishes dish
 misses miss
 report's report's
+bus bus
+buses bus
+Texas Texas
 /; 
 
 for my $word (sort keys %words) { 
