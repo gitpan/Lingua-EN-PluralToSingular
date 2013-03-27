@@ -1,5 +1,5 @@
 ---
-abstract: 'change an English plural to a singular'
+abstract: unknown
 author:
   - 'Ben Bullock <bkb@cpan.org>'
 build_requires:
@@ -22,4 +22,4 @@ resources:
   bugtracker: https://github.com/benkasminbullock/Lingua-EN-PluralToSingular/issues
   homepage: http://prepan.org/module/3Yz7PYrBN8
   repository: https://github.com/benkasminbullock/Lingua-EN-PluralToSingular
-version: 0.04
+version: 0.05

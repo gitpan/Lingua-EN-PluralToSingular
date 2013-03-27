@@ -4,7 +4,7 @@ require Exporter;
 @EXPORT_OK = qw/to_singular/;
 use warnings;
 use strict;
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 
 # Irregular plurals.
 
@@ -107,7 +107,10 @@ sub to_singular
         }
         elsif ($word =~ /s$/) {
             # The word ends in "s".
-            if ($word =~ /ies$/) {
+	    if ($word =~ /'s$/) {
+		;
+	    }
+            elsif ($word =~ /ies$/) {
                 # The word ends in "ies".
                 if ($ies{$word}) {
                     # Lies -> lie
@@ -146,68 +149,4 @@ sub to_singular
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Lingua::EN::PluralToSingular - change an English plural to a singular
-
-=head1 SYNOPSIS
-
-    use Lingua::EN::PluralToSingular 'to_singular';
-
-    print to_singular ('knives');
-    # "knife"
-
-=head1 DESCRIPTION
-
-This Perl module converts words denoting a plural in the English
-language into words denoting a singular noun.
-
-=head1 ROUTINES
-
-=head2 to_singular
-
-    my $singular = to_singular ($word);
-
-Convert C<$word> into its singular form. For example,
-
-    to_singular ('cats')
-
-returns 'cat'. If the word is unknown or does not seem to be
-plural, C<to_singular> returns the word itself, so
-
-    to_singular ('battlehorn');
-
-returns 'battlehorn'.
-
-=head3 Limitations
-
-It assumes its input is a noun. For example, "lives" may be the plural
-of "life", or the verb "live", as in "he lives". The routine assumes a
-noun and converts to "life".
-
-It does not deal with capitalized words. If the input word may be
-capitalized, or if its initial letter may be capitalized, the user
-must preprocess it to put it into the normal case. So, for example,
-
-    to_singular ('FLIES');
-
-returns 'FLIES' and
-
-    to_singular ('Wolves');
-
-returns 'Wolve'.
-
-=head1 AUTHOR
-
-Ben Bullock <bkb@cpan.org>
-
-=head1 COPYRIGHT & LICENCE
-
-Copyright (C) 2011 Ben Bullock.
-
-This Perl module may be used, copied, altered and redistributed under
-the same terms as the Perl language itself.
 
