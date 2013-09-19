@@ -34,6 +34,13 @@ for my $word (sort keys %words) {
     is ($s, $words{$word}, "$s == $words{$word}"); 
 } 
 
+my $s = 's';
+my $sout = to_singular ($s);
+is ($s, $sout, "Don't truncate the single letter 's'");
+my $is = 'is';
+my $isout = to_singular ($is);
+is ($is, $isout, "Don't truncate two letter words ending in 's'");
+
 my %bugs = (qw/
 /);
 
