@@ -4,7 +4,7 @@ require Exporter;
 @EXPORT_OK = qw/to_singular/;
 use warnings;
 use strict;
-our $VERSION = 0.08;
+our $VERSION = 0.09;
 
 # Irregular plurals.
 
@@ -66,7 +66,7 @@ my %ves = (qw/
     scarves scarf
     sheaves sheaf
     shelves shelf
-    wharf wharves
+    wharves wharf 
     wives wife
     wolves wolf
 /);
@@ -221,10 +221,6 @@ sub to_singular
 		# basis, dialysis etc.
 		;
 	    }
-	    elsif ($word =~ /us$/) {
-		# basis, dialysis etc.
-		;
-	    }
             elsif ($word =~ /ies$/) {
                 # The word ends in "ies".
                 if ($ies{$word}) {
@@ -246,6 +242,10 @@ sub to_singular
                     # Potatoes -> potato
                     $singular =~ s/oes$/o/;
                 }
+            }
+            elsif ($word =~ /xes/) {
+                # The word ends in "xes".
+		$singular =~ s/xes$/x/;
             }
             elsif ($word =~ $es_re) {
                 # Sandwiches -> sandwich
