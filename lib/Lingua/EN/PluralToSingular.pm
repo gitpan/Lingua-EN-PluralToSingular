@@ -4,7 +4,7 @@ require Exporter;
 @EXPORT_OK = qw/to_singular/;
 use warnings;
 use strict;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 # Irregular plurals.
 
@@ -32,6 +32,7 @@ my %irregular = (qw/
     lice louse
     matrices matrix
     memoranda memorandum
+    craftsmen craftsman
     men man
     mice mouse
     neuroses neurosis
@@ -144,6 +145,9 @@ my @not_plural = (qw/
     devious
     metropolis
     miscellaneous
+    perhaps
+    thus
+    famous
 /);
 
 my %not_plural;
@@ -188,6 +192,17 @@ ties
 my %ies;
 
 @ies{@ies} = (1) x @ies;
+
+# Words which end in -se, so that we want the singular to change from
+# -ses to -se.
+
+my @ses = (qw/
+horses
+tenses
+/);
+
+my %ses;
+@ses{@ses} = (1) x @ses;
 
 # A regular expression which matches the end of words like "dishes"
 # and "sandwiches". $1 is a capture which contains the part of the
@@ -238,7 +253,7 @@ sub to_singular
                     $singular =~ s/ies$/y/;
                 }
             }
-            elsif ($word =~ /oes/) {
+            elsif ($word =~ /oes$/) {
                 # The word ends in "oes".
                 if ($oes{$word}) {
                     # Toes -> toe
@@ -249,10 +264,18 @@ sub to_singular
                     $singular =~ s/oes$/o/;
                 }
             }
-            elsif ($word =~ /xes/) {
+            elsif ($word =~ /xes$/) {
                 # The word ends in "xes".
 		$singular =~ s/xes$/x/;
             }
+	    elsif ($word =~ /ses$/) {
+		if ($ses{$word}) {
+		    $singular =~ s/ses$/se/;
+		}
+		else {
+		    $singular =~ s/ses$/s/;
+		}
+	    }
             elsif ($word =~ $es_re) {
                 # Sandwiches -> sandwich
                 # Dishes -> dish
