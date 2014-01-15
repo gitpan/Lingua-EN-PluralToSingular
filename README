@@ -18,7 +18,7 @@
         
 
 
-This is the README for Lingua::EN::PluralToSingular version 0.11.
+This is the README for Lingua::EN::PluralToSingular version 0.12.
 
 Lingua::EN::PluralToSingular is a "module" for the Perl computer programming
 language, a library of computer code to install on a computer.  This document
@@ -38,8 +38,8 @@ contains four sections:
 
 Lingua::EN::PluralToSingular - change an English plural to a singular
 
-This Perl module converts words denoting a plural in the English
-language into words denoting a singular noun.
+This converts words denoting a plural in the English language into
+words denoting a singular noun.
 
 -----------------------------------------------------------------------------
 
@@ -70,10 +70,10 @@ If you have the App::cpanminus installer, you may prefer
     cpanm Lingua::EN::PluralToSingular
 
 To install the module from the source file,
-Lingua-EN-PluralToSingular-0.11.tar.gz, follow this sequence of commands:
+Lingua-EN-PluralToSingular-0.12.tar.gz, follow this sequence of commands:
 
-    tar xfz Lingua-EN-PluralToSingular-0.11.tar.gz
-    cd Lingua-EN-PluralToSingular-0.11
+    tar xfz Lingua-EN-PluralToSingular-0.12.tar.gz
+    cd Lingua-EN-PluralToSingular-0.12
     perl Makefile.PL
     make
     make install
@@ -98,6 +98,6 @@ the public repository on github at
 
 -----------------------------------------------------------------------------
 
-This README was written on Tue Jan 14 16:03:20 2014.
+This README was written on Wed Jan 15 10:45:41 2014.
 
 -----------------------------------------------------------------------------

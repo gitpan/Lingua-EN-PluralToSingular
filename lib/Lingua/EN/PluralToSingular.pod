@@ -11,10 +11,12 @@ Lingua::EN::PluralToSingular - change an English plural to a singular
 
 =head1 DESCRIPTION
 
-This Perl module converts words denoting a plural in the English
-language into words denoting a singular noun.
+This converts words denoting a plural in the English language into
+words denoting a singular noun.
 
-=head1 ROUTINES
+=head1 FUNCTIONS
+
+There is only one function.
 
 =head2 to_singular
 
@@ -31,11 +33,15 @@ plural, C<to_singular> returns the word itself, so
 
 returns 'battlehorn'.
 
-=head3 Limitations
+=head1 LIMITATIONS
 
-It assumes its input is a noun. For example, "lives" may be the plural
-of "life", or the verb "live", as in "he lives". The routine assumes a
-noun and converts to "life".
+=head2 Assumes the input is a noun
+
+L</to_singular> assumes its input is a noun. For example, "lives" may
+be the plural of "life", or the verb "live", as in "he lives". The
+routine assumes a noun and converts to "life".
+
+=head2 Distinguishes lower and upper case
 
 It does not deal with capitalized words. If the input word may be
 capitalized, or if its initial letter may be capitalized, the user
@@ -47,7 +53,21 @@ returns 'FLIES' and
 
     to_singular ('Wolves');
 
-returns 'Wolve'.
+returns 'Wolve'. Similarly,
+
+    to_singular ('Charles');
+
+returns 'Charles', but 
+
+    to_singular ('charles');
+
+returns 'charle', since the exception only applies if the word is
+capitalized.
+
+=head2 Does not handle pronouns
+
+The module does not attempt to handle pronoun forms like "ourselves"
+or "themselves". These words are left unaltered.
 
 =head1 STANDALONE SCRIPT
 
@@ -59,8 +79,12 @@ versions of nouns:
 
 =head1 BUGS
 
-This module is in early development, and there are many exceptions
-which are not included yet.
+This module is in development, and there are many exceptions which are
+not included yet.
+
+=head1 ACKNOWLEDGEMENTS
+
+Thanks to Xan Charbonnet and H2CHANG for various additions and fixes.
 
 =head1 AUTHOR
 
@@ -68,7 +92,7 @@ Ben Bullock, <bkb@cpan.org>
 
 =head1 COPYRIGHT & LICENCE
 
-This package and associated files are copyright (C) 2012-2013 Ben
+This package and associated files are copyright (C) 2012-2014 Ben
 Bullock.
 
 You can use, copy, modify and redistribute this package and associated

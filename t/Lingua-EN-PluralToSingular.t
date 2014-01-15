@@ -1,6 +1,7 @@
 use warnings;
 use strict;
 use Test::More;
+
 BEGIN { use_ok('Lingua::EN::PluralToSingular', 'to_singular') };
 
 my %words = qw/ 
@@ -35,6 +36,11 @@ tenses tense
 horses horse
 dresses dress
 horse horse
+dwarves dwarf
+mrs mrs
+canvases  canvas
+geniuses  genius
+viruses  virus
 /; 
 
 for my $word (sort keys %words) { 

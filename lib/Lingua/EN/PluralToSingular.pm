@@ -4,7 +4,7 @@ require Exporter;
 @EXPORT_OK = qw/to_singular/;
 use warnings;
 use strict;
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 # Irregular plurals.
 
@@ -35,6 +35,7 @@ my %irregular = (qw/
     craftsmen craftsman
     men man
     mice mouse
+    monies money
     neuroses neurosis
     nuclei nucleus
     oases oasis
@@ -57,7 +58,7 @@ my %irregular = (qw/
 
 my %ves = (qw/
     calves calf
-    dwarf dwarves
+    dwarves dwarf
     elves elf
     halves half
     knives knife
@@ -86,7 +87,9 @@ my %plural = (
 # A store of words which are the same in both singular and plural.
 
 my @no_change = qw/
+                      clothes
                       deer
+                      ides
                       fish
                       means
                       offspring
@@ -107,6 +110,20 @@ my @no_change = qw/
 my @not_plural = (qw/
     Charles
     Texas
+Hades 
+Hercules 
+Hermes 
+Gonzales 
+Holmes 
+Hughes 
+Ives 
+Jacques 
+James 
+Keyes 
+Mercedes 
+Naples 
+Oates 
+Raines 
 
     dias
     iris
@@ -148,6 +165,12 @@ my @not_plural = (qw/
     perhaps
     thus
     famous
+    mrs
+sometimes
+
+ourselves
+themselves
+
 /);
 
 my %not_plural;
