@@ -18,7 +18,7 @@
         
 
 
-This is the README for Lingua::EN::PluralToSingular version 0.13.
+This is the README for Lingua::EN::PluralToSingular version 0.14.
 
 Lingua::EN::PluralToSingular is a "module" for the Perl computer programming
 language, a library of computer code to install on a computer.  This document
@@ -72,10 +72,10 @@ If you have the App::cpanminus installer, you may prefer
     cpanm Lingua::EN::PluralToSingular
 
 To install the module from the source file,
-Lingua-EN-PluralToSingular-0.13.tar.gz, follow this sequence of commands:
+Lingua-EN-PluralToSingular-0.14.tar.gz, follow this sequence of commands:
 
-    tar xfz Lingua-EN-PluralToSingular-0.13.tar.gz
-    cd Lingua-EN-PluralToSingular-0.13
+    tar xfz Lingua-EN-PluralToSingular-0.14.tar.gz
+    cd Lingua-EN-PluralToSingular-0.14
     perl Makefile.PL
     make
     make install
@@ -100,6 +100,6 @@ the public repository on github at
 
 -----------------------------------------------------------------------------
 
-This README was written on Wed Jul 16 17:48:23 2014.
+This README was written on Tue Aug  5 18:11:25 2014.
 
 -----------------------------------------------------------------------------
